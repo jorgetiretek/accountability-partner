@@ -88,6 +88,15 @@ alter table public.items enable row level security;
 alter table public.item_permissions enable row level security;
 alter table public.activity_log enable row level security;
 
+-- El acceso de la API se concede a usuarios que ya iniciaron sesión.
+-- RLS, definido abajo, decide qué registros puede ver o modificar cada uno.
+grant usage on schema public to authenticated;
+grant select, insert, update, delete on table public.profiles to authenticated;
+grant select, insert, update, delete on table public.coach_relationships to authenticated;
+grant select, insert, update, delete on table public.items to authenticated;
+grant select, insert, update, delete on table public.item_permissions to authenticated;
+grant select, insert on table public.activity_log to authenticated;
+
 create policy "profiles: own profile" on public.profiles
 for select to authenticated using (id = auth.uid());
 create policy "profiles: update own" on public.profiles
