@@ -2,8 +2,16 @@ export type Status = 'INBOX' | 'NEXT' | 'ACTIVE' | 'BLOCKED' | 'SOMEDAY' | 'DONE
 export type Priority = 'CRITICAL' | 'HIGH' | 'NORMAL' | 'LOW';
 export type Kind = 'TASK' | 'PROJECT' | 'FOLLOW_UP' | 'DECISION' | 'IDEA';
 export type Visibility = 'PERSONAL' | 'SHARED' | 'COACH_ASSIGNED';
+export type LifeArea = 'MISSION' | 'LEARNING' | 'HEALTH' | 'FAMILY' | 'INNER';
+export const areaLabels: Record<LifeArea, string> = {
+  MISSION: 'Profesional, negocio y libertad financiera',
+  LEARNING: 'Aprendizaje y formación',
+  HEALTH: 'Salud y energía',
+  FAMILY: 'Relaciones y familia',
+  INNER: 'Bienestar, propósito y espiritualidad',
+};
 export interface Event { id: string; at: string; action: string; note?: string }
-export interface Item { id: string; title: string; kind: Kind; status: Status; priority: Priority; visibility?: Visibility; role?: string; dueDate?: string; reviewDate?: string; nextAction?: string; person?: string; blocker?: string; progress?: number; events: Event[]; createdAt: string; updatedAt: string; }
+export interface Item { id: string; title: string; kind: Kind; status: Status; priority: Priority; area: LifeArea; visibility?: Visibility; role?: string; dueDate?: string; reviewDate?: string; nextAction?: string; person?: string; blocker?: string; progress?: number; events: Event[]; createdAt: string; updatedAt: string; }
 export const active = (items: Item[]) => items.filter(i => i.status === 'ACTIVE').sort((a,b) => a.updatedAt.localeCompare(b.updatedAt));
 export const overdue = (item: Item, today = new Date().toISOString().slice(0,10)) => Boolean(item.dueDate && item.dueDate < today && !['DONE','CANCELLED'].includes(item.status));
 export function recommendation(items: Item[]): Item | undefined { const candidates = items.filter(i => i.status === 'ACTIVE' || i.status === 'NEXT'); return candidates.sort((a,b) => Number(overdue(b)) - Number(overdue(a)) || rank(b.priority)-rank(a.priority) || (a.dueDate ?? '9999').localeCompare(b.dueDate ?? '9999'))[0]; }

@@ -1,7 +1,7 @@
 {
-  "name": "mi-carril",
+  "name": "accountability-partner",
   "version": "1.0.0",
-  "description": "MVP personal para capturar asuntos, elegir pocas prioridades activas y confiar en que el sistema traerá de vuelta lo importante.",
+  "description": "Centro de dirección para avanzar con claridad, disciplina y un ritmo sostenible.",
   "private": true,
   "type": "module",
   "scripts": {
