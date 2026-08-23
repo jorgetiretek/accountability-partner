@@ -17,7 +17,7 @@ El segundo valor es una clave de cliente y se incluye en el navegador; la seguri
 
 En Supabase > Authentication > URL Configuration:
 
-- Site URL: `https://jorgetiretek.github.io/mi-carril/`
-- Redirect URL adicional: `https://jorgetiretek.github.io/mi-carril/`
+- Site URL: `https://jorgetiretek.github.io/accountability-partner/`
+- Redirect URL adicional: `https://jorgetiretek.github.io/accountability-partner/`
 
 La app utiliza enlaces de acceso enviados por correo. Solo después de autenticarse se sincronizan los pendientes.
