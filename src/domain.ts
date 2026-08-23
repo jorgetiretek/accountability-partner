@@ -2,7 +2,7 @@ export type Status = 'INBOX' | 'NEXT' | 'ACTIVE' | 'BLOCKED' | 'SOMEDAY' | 'DONE
 export type Priority = 'CRITICAL' | 'HIGH' | 'NORMAL' | 'LOW';
 export type Kind = 'TASK' | 'PROJECT' | 'FOLLOW_UP' | 'MEETING' | 'DECISION' | 'IDEA';
 export type Visibility = 'PERSONAL' | 'SHARED' | 'COACH_ASSIGNED';
-export type CommitmentRole = 'EXECUTE' | 'SUPERVISE' | 'RECEIVE';
+export type CommitmentRole = 'EXECUTE' | 'AUTHORIZE' | 'SUPERVISE' | 'RECEIVE';
 export type LifeArea = 'MISSION' | 'LEARNING' | 'HEALTH' | 'FAMILY' | 'INNER';
 export const areaLabels: Record<LifeArea, string> = {
   MISSION: 'Profesional, negocio y libertad financiera',
