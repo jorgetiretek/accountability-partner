@@ -1,0 +1,10 @@
+.detailmodal{width:min(760px,100%)}
+.formgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 14px}
+.subform{margin:18px 0;padding:18px;background:#dce8f0;border-left:4px solid #159bff}
+.subform h3{margin:0 0 7px;text-transform:uppercase}.subform p{font-size:12px;color:#405b6e;line-height:1.4}
+.subform button{border:1px solid #638299;background:#fff;border-radius:2px;padding:10px 12px;color:#183449;font-weight:bold;cursor:pointer}
+.timing{display:inline-block;padding:3px 6px;border-radius:2px;font-size:9px!important;letter-spacing:.5px;font-weight:800}
+.timing-on_time{color:#9fbbce;background:#1f2c37}.timing-risk_informed{color:#2c2400;background:#f4d234}.timing-overdue_unattended{color:#fff;background:#c52e2e}.timing-late_replan,.timing-overdue_tracked{color:#251300;background:#f17a24}
+.card.timing-overdue_unattended{border-left-color:#e13a3a}.card.timing-late_replan,.card.timing-overdue_tracked{border-left-color:#f17a24}.card.timing-risk_informed{border-left-color:#f4d234}
+.metricsnote{margin-top:18px;padding:20px;background:#141b23;border-left:3px solid #159bff}.metricsnote h2{margin:0 0 6px;text-transform:uppercase}.metricsnote p{margin:0;color:#aebfcb;font-size:13px}
+@media(max-width:760px){.formgrid{grid-template-columns:1fr}}
