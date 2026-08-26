@@ -29,7 +29,7 @@ export interface Item {
   id: string; title: string; kind: Kind; kindConfirmed?: boolean; status: Status; priority: Priority; area: LifeArea;
   visibility?: Visibility; commitmentRole?: CommitmentRole; gameRole?: GameRole; role?: string;
   dueDate?: string; originalDueDate?: string; reviewDate?: string; meetingAt?: string;
-  participants?: string; meetingScore?: number; nextAction?: string; person?: string; blocker?: string;
+  participants?: string; participantIds?: string[]; meetingScore?: number; nextAction?: string; person?: string; personId?: string; blocker?: string;
   directManager?: string; blockerCategory?: BlockerCategory; escalatedTo?: string; escalatedAt?: string;
   escalationMethod?: string; escalationMessage?: string; requestedSupport?: string; escalationReviewDate?: string;
   requestedDueDate?: string; replanRequestedAt?: string; replanReason?: ReplanReason; replanNote?: string;

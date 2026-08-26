@@ -21,3 +21,7 @@ En Supabase > Authentication > URL Configuration:
 - Redirect URL adicional: `https://jorgetiretek.github.io/accountability-partner/`
 
 La app utiliza enlaces de acceso enviados por correo. Solo después de autenticarse se sincronizan los pendientes.
+
+## Equipo y estructura
+
+Para sincronizar el organigrama entre computadora y celular, ejecutar una sola vez el contenido completo de `supabase/organization.sql` en Supabase > SQL Editor. Esta configuración agrega una tabla privada por usuario para puestos, personas y asignaciones del organigrama.
