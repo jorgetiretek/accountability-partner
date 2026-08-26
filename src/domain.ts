@@ -35,7 +35,7 @@ export interface Item {
   escalationMethod?: string; escalationMessage?: string; requestedSupport?: string; escalationReviewDate?: string;
   requestedDueDate?: string; replanRequestedAt?: string; replanReason?: ReplanReason; replanNote?: string;
   replanNotifiedTo?: string; replanMethod?: string; replanImpact?: string; replanStatus?: 'PENDING' | 'APPROVED' | 'REJECTED';
-  progress?: number; events: Event[]; createdAt: string; updatedAt: string;
+  progress?: number; startedAt?: string; events: Event[]; createdAt: string; updatedAt: string;
 }
 export type Timing = 'ON_TIME' | 'RISK_INFORMED' | 'OVERDUE_UNATTENDED' | 'LATE_REPLAN' | 'OVERDUE_TRACKED';
 export const timingLabels: Record<Timing, string> = {
