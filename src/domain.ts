@@ -6,11 +6,10 @@ export type CommitmentRole = 'EXECUTE' | 'AUTHORIZE' | 'SUPERVISE' | 'RECEIVE';
 export type GameRole = 'QUARTERBACK' | 'EXECUTOR' | 'REFEREE' | 'COACH';
 export type BlockerCategory = 'PERSONAS' | 'DINERO' | 'DECISION' | 'INFORMACION' | 'PROVEEDOR' | 'HERRAMIENTA' | 'OTRO';
 export type ReplanReason = 'DEPENDENCIA' | 'INFORMACION' | 'RECURSOS' | 'AUSENCIA' | 'FALLA' | 'PRIORIDAD' | 'MALA_ESTIMACION' | 'OTRA';
-export type LifeArea = 'MISSION' | 'LEARNING' | 'HEALTH' | 'FAMILY' | 'INNER';
+export type LifeArea = 'BUSINESS' | 'DEVELOPMENT';
 
 export const areaLabels: Record<LifeArea, string> = {
-  MISSION: 'Profesional, negocio y libertad financiera', LEARNING: 'Aprendizaje y formación',
-  HEALTH: 'Salud y energía', FAMILY: 'Relaciones y familia', INNER: 'Bienestar, propósito y espiritualidad',
+  BUSINESS: 'Operación y crecimiento del negocio', DEVELOPMENT: 'Formación y desarrollo profesional',
 };
 export const gameRoleLabels: Record<GameRole, string> = {
   QUARTERBACK: 'Quarterback', EXECUTOR: 'Executor', REFEREE: 'Referee', COACH: 'DT / Coach',
@@ -27,7 +26,7 @@ export const replanReasonLabels: Record<ReplanReason, string> = {
 
 export interface Event { id: string; at: string; action: string; note?: string }
 export interface Item {
-  id: string; title: string; kind: Kind; status: Status; priority: Priority; area: LifeArea;
+  id: string; title: string; kind: Kind; kindConfirmed?: boolean; status: Status; priority: Priority; area: LifeArea;
   visibility?: Visibility; commitmentRole?: CommitmentRole; gameRole?: GameRole; role?: string;
   dueDate?: string; originalDueDate?: string; reviewDate?: string; meetingAt?: string;
   participants?: string; meetingScore?: number; nextAction?: string; person?: string; blocker?: string;
